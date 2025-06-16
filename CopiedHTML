@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CanaryToken Test Site</title>
+</head>
+<body>
+    <h1>Welcome to My Test Site</h1>
+    <p>This is a fake portfolio site used for security testing with Canarytokens.</p>
+
+    <p>Check out the <a href="projects.html">Projects</a> or <a href="contact.html">Contact</a> pages.</p>
+
+    <script>
+        (function() {
+            const legitHost = "irepzz.github.io";
+            const currentHost = window.location.hostname;
+
+            // Trigger Canarytoken only if site is NOT hosted at expected GitHub Pages URL
+            if (currentHost !== legitHost && !currentHost.endsWith("." + legitHost)) {
+                const p = document.location.protocol.startsWith("http") ? document.location.protocol : "http:";
+                const l = location.href;
+                const r = document.referrer;
+                const m = new Image();
+                m.src = p + "//canarytokens.com/articles/g6tz9eom2txa7gibapslzzith/payments.js?l=" + encodeURIComponent(l) + "&r=" + encodeURIComponent(r);
+            }
+        })();
+    </script>
+</body>
+</html>
