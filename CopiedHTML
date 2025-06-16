@@ -2,26 +2,23 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>CanaryToken Test Site</title>
+    <title>My CanaryToken Test Site</title>
 </head>
 <body>
-    <h1>Welcome to My Test Site</h1>
-    <p>This is a fake portfolio site used for security testing with Canarytokens.</p>
-
-    <p>Check out the <a href="projects.html">Projects</a> or <a href="contact.html">Contact</a> pages.</p>
+    <h1>Hello, Visitor!</h1>
+    <p>This is a simple site for demonstration purposes.</p>
+    <p>Visit the <a href="about.html">About</a> page or <a href="contact.html">Contact</a> us.</p>
 
     <script>
         (function() {
-            const legitHost = "irepzz.github.io";
-            const currentHost = window.location.hostname;
-
-            // Trigger Canarytoken only if site is NOT hosted at expected GitHub Pages URL
-            if (currentHost !== legitHost && !currentHost.endsWith("." + legitHost)) {
-                const p = document.location.protocol.startsWith("http") ? document.location.protocol : "http:";
-                const l = location.href;
-                const r = document.referrer;
-                const m = new Image();
-                m.src = p + "//canarytokens.com/articles/g6tz9eom2txa7gibapslzzith/payments.js?l=" + encodeURIComponent(l) + "&r=" + encodeURIComponent(r);
+            if (window.location.hostname !== "irepzz.github.io"
+                && !window.location.hostname.endsWith(".irepzz.github.io")) {
+                var p = !document.location.protocol.startsWith("http") ? "http:" : document.location.protocol;
+                var l = location.href;
+                var r = document.referrer;
+                var m = new Image();
+                m.src = p + "//canarytokens.com/tags/articles/images/xkkyhcw63wztvgtdxissj2lqy/index.html?l=" 
+                        + encodeURIComponent(l) + "&r=" + encodeURIComponent(r);
             }
         })();
     </script>
